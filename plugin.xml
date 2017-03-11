@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Plugin name="Prune Users" lan="LAN_PLUGIN_PRUNE_NAME" version="2.6" date="2017-03-11" compatibility="2.0" installRequired="true" >
+	<author name="Father Barry" url="http://www.keal.me.uk" />
+	<summary lan="LAN_PLUGIN_PRUNE_SUMMARY">Prune Inactive Users</summary>
+	<description lan="LAN_PLUGIN_PRUNE_DESC">Prune Inactive Users</description>
+	<category>tools</category>
+	<copyright>GNU General Public License v2</copyright>
+	<adminLinks>
+		<link url="admin_config.php" icon="images/prune_32.png" iconSmall="images/prune_16.png" icon128="images/prune_128.png" primary="true" >LAN_CONFIGURE</link>
+	</adminLinks>
+	<pluginPrefs>
+		<pref name="prune_days">120</pref>
+		<pref name="prune_type">0</pref>
+		<pref name="prune_threshold">360</pref>
+		<pref name="prune_exadmin">1</pref>
+		<pref name="prune_auto">0</pref>
+		<pref name="prune_notify">1</pref>
+		<pref name="prune_action">1</pref>
+		<pref name="prune_class">0</pref>		
+	</pluginPrefs>	
+</e107Plugin>
