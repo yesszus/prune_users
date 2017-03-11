@@ -16,7 +16,7 @@ require_once(e_ADMIN . "auth.php");
 $path =  'prune_users';   
 $xml 			= e107::getXml();
 
-$evrsn_text = "<table class='fborder' width='97%'>";
+$evrsn_text = "<table class='fborder table adminlist table-striped' width='97%'>";
 if (file_exists("plugin.xml") OR file_exists("plugin.php"))
 
 {
@@ -38,12 +38,12 @@ if (file_exists("plugin.xml") OR file_exists("plugin.php"))
         include($fullPath."e_update.php");
         $evrsn_plugvsn = explode(".", $eplug_version);					  
        } 
-        $evrsn_text .= "<tr><td class='fcaption'>" . EVERSION_U11 . "</td></tr>
+        $evrsn_text .= "<tr><td class='forumheader3'>" . EVERSION_U11 . "</td></tr>
 		<tr><td class='forumheader3'>" . EVERSION_U3 . " <strong>" . $eplug_name . "</strong><br />
 		" . EVERSION_U4 . " <strong>" . $eplug_version . "</strong> " . ($evrsn_plugvsn[2] > 0?EVERSION_U8:"") . " <br />
 		" . EVERSION_U15 . "<strong> " . $eplug_description . "</strong><br />
 		</td></tr>
-		<tr><td class='fcaption'>" . EVERSION_U12 . "</td></tr>";
+		<tr><td class='forumheader3'>" . EVERSION_U12 . "</td></tr>";
         // Get the current installed version from plugin table
         if ($sql->db_Select("plugin", "*", "where plugin_name='{$eplug_name}'", "nowhere", false))
         {
@@ -83,7 +83,7 @@ if (file_exists("plugin.xml") OR file_exists("plugin.php"))
 
                 if ($evrsn_pcurrent != $evrsn_current)
                 {
-                    $evrsn_text .= "<tr><td class='forumheader3'><img src='" . e_PLUGIN . $path."/admin_images/upgrade.png' alt='' title='' /> " . EVERSION_U19 . " <strong>" . $evrsn_pversion . "</strong> " . EVERSION_U20 . "</td></tr>";
+                $evrsn_text .= "<tr><td class='forumheader3'>" . ADMIN_UPGRADEPLUGIN_ICON. EVERSION_U19 . " - <strong>" . $evrsn_pversion . "</strong> " . EVERSION_U20 . "</td></tr>";
                 }
                 $evrsn_nownotbeta = false;
                 // Check if now not beta
@@ -94,7 +94,7 @@ if (file_exists("plugin.xml") OR file_exists("plugin.php"))
                 if ($evrsn_update > $evrsn_current || $evrsn_nownotbeta)
                 {
                     // if server version greater than installed version
-                    $evrsn_text .= "<tr><td class='forumheader3'><img src='" . e_PLUGIN . $path."/admin_images/uninstalled.png' alt='' title='' /> " . EVERSION_U7 . " - <strong>" . $evrsn_serversion . "</strong>";
+                $evrsn_text .= "<tr><td class='forumheader3'>".ADMIN_UPGRADEPLUGIN_ICON.  EVERSION_U7 . " - <strong>" . $evrsn_serversion . "</strong>";
                     if ($evrsn_tmpupdate[2] > 0)
                     {
                         // is it a beta version?
@@ -122,7 +122,7 @@ if (file_exists("plugin.xml") OR file_exists("plugin.php"))
                 else
                 {
                     // It is the latest version
-                    $evrsn_text .= "<tr><td class='forumheader3'><img src='" . e_PLUGIN . $path."/admin_images/installed.png' alt='' title='' /> " . EVERSION_U9;
+                	$evrsn_text .= "<tr><td class='forumheader3'>".ADMIN_TRUE_ICON.EVERSION_U9;
                     $evrsn_text .= "<br /><br />" . EVERSION_U13 . " <a target='_blank' href='" . $evrsn_url . "'>" . EVERSION_U14 . "</a><br /></td></tr>";
                 }
             }

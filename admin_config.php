@@ -101,7 +101,7 @@ $prune_text .= "
 		<tr>
 			<td style='width:40%' class='forumheader3'>" . PRUNE_A25 . " :</td>
 			<td class='forumheader3' >
-				<select class='tbox' name='prune_action'>
+				<select style='width:50%' class='tbox' name='prune_action'>
 					<option value='0' " . ($pref['prune_action'] == 0?"selected='selected'":"") . " >" . PRUNE_A26 . "</option>
 					<option value='1' " . ($pref['prune_action'] == 1?"selected='selected'":"") . " >" . PRUNE_A27 . "</option>
 					<option value='2' " . ($pref['prune_action'] == 2?"selected='selected'":"") . " >" . PRUNE_A47 . "</option>
